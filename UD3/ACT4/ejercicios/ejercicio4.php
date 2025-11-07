@@ -14,9 +14,10 @@
         }
     </style>
 </head>
-
+  
   <body class="d-flex flex-column h-100">
-      <!-- Header -->
+
+  <!-- Header -->
     <header class="bg-light text-center p-4">
         <div class="d-flex justify-content-center">
             <img src="../img/php_logo.png" alt="Imagen encabezado" class="img-fluid rounded shadow"
@@ -27,7 +28,7 @@
     <!-- Navbar -->
     <nav class="navbar navbar-expand-lg navbar-light bg-light">
         <div class="container-fluid">
-            <a class="navbar-brand" href="#">Inicio</a>
+            <a class="navbar-brand" href="../inicio.html">Inicio</a>
 
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarContent"
                 aria-controls="navbarContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -40,30 +41,31 @@
                         <a class="nav-link btn btn-primary me-2 text-white" href="ejercicio1.php">Variables</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link btn btn-secondary me-2 text-white" href="#">Clases y Funciones</a>
+                        <a class="nav-link btn btn-secondary me-2 text-white" href="ejercicio2.php">Clases y Funciones</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link btn btn-success me-2 text-white" href="ejercicio3.php">Condiciones</a>
+                        <a class="nav-link btn btn-success me-2 text-white" href="ejercio3.php">Condiciones</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link btn btn-warning me-2 text-white" href="ejercicio4.php">Bucles</a>
+                        <a class="nav-link btn btn-warning me-2 text-white" href="#">Bucles</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link btn btn-danger me-2 text-white" href="ejercicio1.5.php">Formularios</a>
+                        <a class="nav-link btn btn-danger me-2 text-white" href="../ejercicio5.php">Formularios</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link btn btn-primary me-2 text-white" href="ejercicio6.php">Sesiones</a>
+                        <a class="nav-link btn btn-primary me-2 text-white" href="../ejercicio6.php">Sesiones</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link btn btn-secondary me-2 text-white" href="ejercicio7.php">Cookies</a>
+                        <a class="nav-link btn btn-secondary me-2 text-white" href="../ejercicio7.php">Cookies</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link btn btn-success me-2 text-white" href="ejercicio1.3.php">Trabajo Final</a>
+                        <a class="nav-link btn btn-success me-2 text-white" href="../ejercicio1.3.php">Trabajo Final</a>
                     </li>
                 </ul>
             </div>
         </div>
     </nav>
+    
     <svg xmlns="http://www.w3.org/2000/svg" class="d-none">
       <symbol id="check2" viewBox="0 0 16 16">
         <path
@@ -164,167 +166,163 @@
 <main class="flex-shrink-0">
   <div class="container py-4">
     <section class="container">
-      <h2 class="mb-4">2- Clases y Funciones</h2>
+      <h2 class="mb-4">4- Estructuras de repetición</h2>
 
-      <!-- Ejercicio 2.1 -->
+      <!-- Ejercicio 3.1 -->
       <article id="ejer2_1" class="card mb-4 shadow-sm bg-light rounded">
         <div class="card-body">
-          <h3 class="card-title">Ejercicio 2.1</h3>
-
-          <h5 class="fw-bold mb-3">Descripción:</h5>
-              <ul class="list-group list-group-flush">
-                <li class="list-group-item">
-                  💡 Crea una clase llamada <strong>Bombilla</strong>.
-                </li>
-                <li class="list-group-item">
-                  🔒 La clase tendrá una propiedad privada de tipo booleano llamada <strong>encendida</strong>.
-                </li>
-                <li class="list-group-item">
-                  ⚙️ El método constructor inicializará la propiedad <strong>encendida</strong> con el valor <strong>false</strong>.
-                </li>
-                <li class="list-group-item">
-                  🧰 La clase tendrá un método público <strong>getEncendida()</strong> para obtener el valor de la propiedad.
-                </li>
-                <li class="list-group-item">
-                  💡 También dispondrá de otros dos métodos públicos, <strong>encender()</strong> y <strong>apagar()</strong>, que cambiarán la propiedad <strong>encendida</strong> y mostrarán un mensaje indicando su estado:
-                  <div class="alert alert-warning mt-2 mb-0">
-                    <em>“La Bombilla está ahora encendida” y “La Bombilla está ahora apagada”</em>
-                  </div>
-                </li>
-                <li class="list-group-item">
-                  👤 Crea un objeto de la clase Bombilla y utiliza los métodos para encender y luego apagar la luz.
-                </li>
-                
-              </ul>
-              <br/>
-          <?php 
-            require_once __DIR__ . '/../recursos/bombilla.php';
-
-            $mibombilla = new Bombilla();
-            $mibombilla->encender();
-            $mibombilla->apagar();
-          ?>
-        </div>
-      </article>
-
-      <!-- Ejercicio 2.2 -->
-      <article id="ejer2_2" class="card mb-4 shadow-sm bg-light rounded">
-        <div class="card-body">
-          <h3 class="card-title">Ejercicio 2.2</h3>
-
+          <h3 class="card-title">Ejercicio 4.1</h3>
            <h5 class="fw-bold mb-3">Descripción:</h5>
               <ul class="list-group list-group-flush">
                 <li class="list-group-item">
-                  📁 Crea en la carpeta <strong>recursos</strong> un archivo llamado <strong>trigonometria.php</strong> e introduce en él una función llamada <strong>calculaHipotenusa</strong> que calcule la longitud de la hipotenusa a partir de los catetos.
+                  🔢 Utilizando la estructura de repetición  <strong>WHILE,</strong> muestra por pantalla todos los números que hay desde el 1 hasta el 20, separados por comas.
                 </li>
                 <li class="list-group-item">
-                  📐 Busca la fórmula para el cálculo de la hipotenusa, que requiere realizar una <strong>raíz cuadrada</strong>.
+                  ⚖️ No muestres la coma después del número  <strong>20.</strong> 
                 </li>
-                <li class="list-group-item">
-                  🧮 Usa la función PHP adecuada para calcular la raíz cuadrada de un número (<code>sqrt()</code>).
-                </li>
-                <li class="list-group-item">
-                  🔢 Usa la función PHP para <strong>redondear</strong> el resultado a dos decimales (<code>round()</code>).
-                </li>
-                <li class="list-group-item">
-                  💻 En el archivo PHP que crearás en la carpeta <strong>ejercicios</strong> para resolver este ejercicio, crea dos variables <strong>$cateto1</strong> y <strong>$cateto2</strong> y asígnales valores concretos.
-                </li>
-                <li class="list-group-item">
-                  📊 Llamando a la función <strong>calculaHipotenusa</strong>, calcula la longitud de la hipotenusa y muestra el resultado.
-                </li>
-              </ul>
-              <br/>
+                
           <?php 
-            require_once __DIR__ . '/../recursos/trigonometria.php';
-              
-            $cateto1 = 10;
-            $cateto2 = 15;
-
-            $hipotenusa = calcularHipotenusa($cateto1,$cateto2);
-            echo "<p class='card-text'>Un triángulo rectángulo con catetos de $cateto1 y $cateto2, tiene una hipotenusa de $hipotenusa.</p>";
-          ?>
+          $contador = 1;
+          
+            while ($contador<=20){
+              if ($contador<20) {
+            echo $contador.",";
+        
+            
+             } else {
+            echo $contador;
+             
+        }
+            $contador += 1; 
+      }
+?>
         </div>
       </article>
 
-      <!-- Ejercicio 2.3 -->
+      <!-- Ejercicio 3.2 -->
+      <article id="ejer2_2" class="card mb-4 shadow-sm bg-light rounded">
+        <div class="card-body">
+          <h3 class="card-title">Ejercicio 3.2</h3>
+          
+           <h5 class="fw-bold mb-3">Descripción:</h5>
+              <ul class="list-group list-group-flush">
+                <li class="list-group-item">
+                  💡Muestra los números del 1 al 15 mediante una <strong>lista desordenada de HTML</strong>.
+              </ul>
+              <br/>
+          <ul>
+            <li>for ($num=1<=15) </li>
+          </ul>
+
+
+        </div>
+      </article>
+
+      <!-- Ejercicio 3.3 -->
       <article id="ejer2_3" class="card mb-4 shadow-sm bg-light rounded">
         <div class="card-body">
-          <h3 class="card-title">Ejercicio 2.3</h3>
+          
+        <h3 class="card-title">Ejercicio 3.3</h3>
 
-          <h5 class="fw-bold mb-3">Descripción:</h5>
+         <h5 class="fw-bold mb-3">Descripción:</h5>
               <ul class="list-group list-group-flush">
                 <li class="list-group-item">
-                  📁 Crea en la carpeta <strong>recursos</strong> un archivo llamado <strong>cubo.php</strong> que contenga la clase <strong>Cubo</strong>.
+                  🎨 Crea una variable llamada <strong>$color</strong> para guardar un determinado color (por ejemplo, “Rojo” o “Verde”).
                 </li>
                 <li class="list-group-item">
-                  🔒 La clase tendrá dos propiedades privadas: una booleana llamada <strong>resuelto</strong> y otra numérica llamada <strong>tamanio</strong>.
+                  🔡 Usa una función estándar de PHP para convertir el contenido de la variable a <strong>minúsculas</strong> (por ejemplo, <code>strtolower()</code>).
                 </li>
                 <li class="list-group-item">
-                  ⚙️ El método constructor inicializará <strong>resuelto</strong> con <strong>true</strong> y <strong>tamanio</strong> con el valor pasado como parámetro.
+                  🔁 Utiliza una estructura condicional <strong>switch</strong> para evaluar el color y mostrar un mensaje diferente en función de su valor.
                 </li>
                 <li class="list-group-item">
-                  🧰 Crea un método público <strong>getResuelto()</strong> para obtener el valor de <strong>resuelto</strong> y otro método llamado <strong>revolver()</strong>.
-                </li>
-                <li class="list-group-item">
-                  🔄 El método <strong>revolver()</strong> cambiará <strong>resuelto</strong> a <strong>false</strong> y mostrará el mensaje:
-                  <div class="alert alert-secondary mt-2 mb-0">
-                    <em>“Ahora está todo revuelto”</em>
-                  </div>
-                </li>
-                <li class="list-group-item">
-                  👤 Todos los métodos de la clase deben ser públicos para poder ser usados desde un objeto.
+                  🧾 Si el color no coincide con ninguno de los casos definidos, muestra un mensaje indicando que el color no está registrado.
                 </li>
               </ul>
               <br/>
-          <?php 
-            require_once __DIR__ . "/../recursos/cubo.php";
+          <?php
 
-            $cubo = new Cubo(3);
-            $cubo->revolver();
+          #Crear la variable color
+          $color = "Rojo";  
+          #Convertir el color a minúsculas
+          $color_minus = strtolower($color);
+
+          #Definir un array asociativo con los colores conocidos
+          $colores = [
+              "rojo" => ["Gorria", "Red"],
+              "verde" => ["Berdea", "Green"],
+              "amarillo" => ["Horia", "Yellow"]
+          ];
+
+
+          #Comprobar si el color existe en el array
+          if (array_key_exists($color_minus, $colores)) {
+              #Obtener los valores del array
+              $euskera = $colores[$color_minus][0];
+              $ingles = $colores[$color_minus][1];
+
+              #Mostrar la información
+              echo ucfirst($color_minus) . " es $euskera en Euskara y $ingles en Inglés";
+
+          } else {
+              #Si el color no existe en el array
+              echo "Lo siento, pero no conozco el color $color";
+          }
           ?>
+
         </div>
       </article>
 
-      <!-- Ejercicio 2.4 -->
+      <!-- Ejercicio 3.4 -->
       <article id="ejer2_4" class="card mb-4 shadow-sm bg-light rounded">
         <div class="card-body">
-          <h3 class="card-title">Ejercicio 2.4</h3>
-
+          <h3 class="card-title">Ejercicio 3.4</h3>
           <h5 class="fw-bold mb-3">Descripción:</h5>
               <ul class="list-group list-group-flush">
                 <li class="list-group-item">
-                  📁 Crea en la carpeta <strong>recursos</strong> un archivo llamado <strong>pokemon.php</strong> que contenga la clase <strong>Pokemon</strong>.
+                  🟣 Crea un objeto de la clase <strong>Pokemon</strong> (por ejemplo, el Pokémon <strong>Gengar</strong>).
                 </li>
                 <li class="list-group-item">
-                  🔒 La clase tendrá dos propiedades privadas: <strong>nombre</strong> y <strong>vida</strong>.
+                  ⚔️ Hiere al recién creado Pokémon con la fuerza que desees (por ejemplo, entre <strong>1 y 10</strong>).
                 </li>
                 <li class="list-group-item">
-                  ⚙️ El método constructor inicializará <strong>nombre</strong> con el valor pasado como parámetro y <strong>vida</strong> con el valor 10.
+                  ❤️ Comprueba la vida actual del Pokémon usando el método correspondiente de la clase.
                 </li>
                 <li class="list-group-item">
-                  🧰 Crea un método público <strong>getVida()</strong> para consultar la vida del Pokémon y otro método público <strong>herir($fuerza)</strong> que reducirá la vida en la cantidad pasada como parámetro.
-                </li>
-                <li class="list-group-item">
-                  🔴 En el método <strong>herir()</strong>, muestra un mensaje indicando el nuevo valor de la propiedad <strong>vida</strong> del Pokémon, junto con su nombre.
-                </li>
-                <li class="list-group-item">
-                  👤 Crea un objeto de la clase Pokemon y llama dos veces al método <strong>herir()</strong> con fuerza 3 y 4, respectivamente.
-                </li>
-                <li class="list-group-item">
-                  📝 Todos los métodos de la clase deben ser públicos para poder ser utilizados desde el objeto.
+                  🧠 Si la vida es superior a <strong>6</strong>, muestra el mensaje:
+                  <div class="alert alert-success mt-2 mb-0">
+                    <em>“La cosa no va mal, vas aguantando.”</em>
+                  </div>
                 </li>
               </ul>
               <br/>
-          <?php 
-            require_once __DIR__ . "/../recursos/pokemon.php";
+          <?php
+          #Incluir la clase Pokemon desde la carpeta recursos
+          require_once '../recursos/pokemon.php';
 
-            #creamos nuevo pokemon
-            $pikachu = new Pokemon("Pikachu");
+          #Crear un objeto de la clase Pokemon
+          $pokemon = new Pokemon("Gengar");
 
-            #llamada a la función herir
-            $pikachu->herir(3);
-            $pikachu->herir(4);
+          #Herir al Pokémon con una fuerza determinada
+          $pokemon->herir(4); #sepuede cambiar la fuerza(1 a 10)
+
+          #Obtener la vida actual del Pokémon
+          $vida_actual = $pokemon->getVida();
+
+          #Mostrar mensajes según el valor de vida
+          
+          #echo "Ahora la vida de Gengar es {$vida_actual}<br>";
+
+          #Estructura condicional según la vida del Pokémon
+          if ($vida_actual > 6) {
+              echo "La cosa no va mal, vas aguantando";
+          } elseif ($vida_actual >= 3 && $vida_actual <= 6) {
+              echo "Estás un poco débil, defiéndete!!";
+          } else {
+              echo "Estás muy débil, es la hora del ataque final!!";
+          }
           ?>
+
         </div>
       </article>
 
