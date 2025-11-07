@@ -28,7 +28,7 @@
     <!-- Navbar -->
     <nav class="navbar navbar-expand-lg navbar-light bg-light">
         <div class="container-fluid">
-            <a class="navbar-brand" href="../inicio.html">Inicio</a>
+            <a class="navbar-brand" href="../index.php">Inicio</a>
 
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarContent"
                 aria-controls="navbarContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -47,19 +47,19 @@
                         <a class="nav-link btn btn-success me-2 text-white" href="#">Condiciones</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link btn btn-warning me-2 text-white" href="../ejercicio1.4.php">Bucles</a>
+                        <a class="nav-link btn btn-warning me-2 text-white" href="ejercicio4.php">Bucles</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link btn btn-danger me-2 text-white" href="../ejercicio5.php">Formularios</a>
+                        <a class="nav-link btn btn-danger me-2 text-white" href="ejercicio5.php">Formularios</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link btn btn-primary me-2 text-white" href="../ejercicio6.php">Sesiones</a>
+                        <a class="nav-link btn btn-primary me-2 text-white" href="ejercicio6.php">Sesiones</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link btn btn-secondary me-2 text-white" href="../ejercicio7.php">Cookies</a>
+                        <a class="nav-link btn btn-secondary me-2 text-white" href="ejercicio7.php">Cookies</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link btn btn-success me-2 text-white" href="../ejercicio1.3.php">Trabajo Final</a>
+                        <a class="nav-link btn btn-success me-2 text-white" href="ejercicio1.3.php">Trabajo Final</a>
                     </li>
                 </ul>
             </div>

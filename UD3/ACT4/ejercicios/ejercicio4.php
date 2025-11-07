@@ -28,7 +28,7 @@
     <!-- Navbar -->
     <nav class="navbar navbar-expand-lg navbar-light bg-light">
         <div class="container-fluid">
-            <a class="navbar-brand" href="../inicio.html">Inicio</a>
+            <a class="navbar-brand" href="../index.php">Inicio</a>
 
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarContent"
                 aria-controls="navbarContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -44,7 +44,7 @@
                         <a class="nav-link btn btn-secondary me-2 text-white" href="ejercicio2.php">Clases y Funciones</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link btn btn-success me-2 text-white" href="ejercio3.php">Condiciones</a>
+                        <a class="nav-link btn btn-success me-2 text-white" href="ejercicio3.php">Condiciones</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link btn btn-warning me-2 text-white" href="#">Bucles</a>
@@ -168,8 +168,8 @@
     <section class="container">
       <h2 class="mb-4">4- Estructuras de repetición</h2>
 
-      <!-- Ejercicio 3.1 -->
-      <article id="ejer2_1" class="card mb-4 shadow-sm bg-light rounded">
+      <!-- Ejercicio 4.1 -->
+      <article id="ejer4_1" class="card mb-4 shadow-sm bg-light rounded">
         <div class="card-body">
           <h3 class="card-title">Ejercicio 4.1</h3>
            <h5 class="fw-bold mb-3">Descripción:</h5>
@@ -199,10 +199,10 @@
         </div>
       </article>
 
-      <!-- Ejercicio 3.2 -->
-      <article id="ejer2_2" class="card mb-4 shadow-sm bg-light rounded">
+      <!-- Ejercicio 4.2 -->
+      <article id="ejer4_2" class="card mb-4 shadow-sm bg-light rounded">
         <div class="card-body">
-          <h3 class="card-title">Ejercicio 3.2</h3>
+          <h3 class="card-title">Ejercicio 4.2</h3>
           
            <h5 class="fw-bold mb-3">Descripción:</h5>
               <ul class="list-group list-group-flush">
@@ -210,119 +210,162 @@
                   💡Muestra los números del 1 al 15 mediante una <strong>lista desordenada de HTML</strong>.
               </ul>
               <br/>
-          <ul>
-            <li>for ($num=1<=15) </li>
-          </ul>
-
-
+    
+            <ul>
+             <?php 
+             //cada vez que se reliza el bucle que crea una linea de lista nueva
+              for ($i = 1; $i <= 15; $i++) {
+                echo "<li>$i</li>";
+            }
+            ?>
+            </ul>
         </div>
       </article>
 
-      <!-- Ejercicio 3.3 -->
-      <article id="ejer2_3" class="card mb-4 shadow-sm bg-light rounded">
+      <!-- Ejercicio 4.3 -->
+      <article id="ejer4_3" class="card mb-4 shadow-sm bg-light rounded">
         <div class="card-body">
           
-        <h3 class="card-title">Ejercicio 3.3</h3>
+          <h3 class="card-title">Ejercicio 4.3</h3>
 
-         <h5 class="fw-bold mb-3">Descripción:</h5>
-              <ul class="list-group list-group-flush">
-                <li class="list-group-item">
-                  🎨 Crea una variable llamada <strong>$color</strong> para guardar un determinado color (por ejemplo, “Rojo” o “Verde”).
-                </li>
-                <li class="list-group-item">
-                  🔡 Usa una función estándar de PHP para convertir el contenido de la variable a <strong>minúsculas</strong> (por ejemplo, <code>strtolower()</code>).
-                </li>
-                <li class="list-group-item">
-                  🔁 Utiliza una estructura condicional <strong>switch</strong> para evaluar el color y mostrar un mensaje diferente en función de su valor.
-                </li>
-                <li class="list-group-item">
-                  🧾 Si el color no coincide con ninguno de los casos definidos, muestra un mensaje indicando que el color no está registrado.
-                </li>
-              </ul>
-              <br/>
-          <?php
-
-          #Crear la variable color
-          $color = "Rojo";  
-          #Convertir el color a minúsculas
-          $color_minus = strtolower($color);
-
-          #Definir un array asociativo con los colores conocidos
-          $colores = [
-              "rojo" => ["Gorria", "Red"],
-              "verde" => ["Berdea", "Green"],
-              "amarillo" => ["Horia", "Yellow"]
-          ];
-
-
-          #Comprobar si el color existe en el array
-          if (array_key_exists($color_minus, $colores)) {
-              #Obtener los valores del array
-              $euskera = $colores[$color_minus][0];
-              $ingles = $colores[$color_minus][1];
-
-              #Mostrar la información
-              echo ucfirst($color_minus) . " es $euskera en Euskara y $ingles en Inglés";
-
-          } else {
-              #Si el color no existe en el array
-              echo "Lo siento, pero no conozco el color $color";
-          }
-          ?>
-
-        </div>
-      </article>
-
-      <!-- Ejercicio 3.4 -->
-      <article id="ejer2_4" class="card mb-4 shadow-sm bg-light rounded">
-        <div class="card-body">
-          <h3 class="card-title">Ejercicio 3.4</h3>
           <h5 class="fw-bold mb-3">Descripción:</h5>
-              <ul class="list-group list-group-flush">
-                <li class="list-group-item">
-                  🟣 Crea un objeto de la clase <strong>Pokemon</strong> (por ejemplo, el Pokémon <strong>Gengar</strong>).
-                </li>
-                <li class="list-group-item">
-                  ⚔️ Hiere al recién creado Pokémon con la fuerza que desees (por ejemplo, entre <strong>1 y 10</strong>).
-                </li>
-                <li class="list-group-item">
-                  ❤️ Comprueba la vida actual del Pokémon usando el método correspondiente de la clase.
-                </li>
-                <li class="list-group-item">
-                  🧠 Si la vida es superior a <strong>6</strong>, muestra el mensaje:
-                  <div class="alert alert-success mt-2 mb-0">
-                    <em>“La cosa no va mal, vas aguantando.”</em>
-                  </div>
-                </li>
-              </ul>
-              <br/>
-          <?php
-          #Incluir la clase Pokemon desde la carpeta recursos
-          require_once '../recursos/pokemon.php';
+                <ul class="list-group list-group-flush">
+                  <li class="list-group-item">
+                    🎨 Crea una tabla HTML con una sola fila de tipo cabecera.
+                  </li>
+                  <li class="list-group-item">
+                    🔡 Mete en un array los nombres de los días de la semana.
+                  </li>
+                  <li class="list-group-item">
+                    🔁 Mete en las celdas de la tabla los nombres de los días de la semana que están almacenados en el array.
+                  </li>
+                </ul>
+                <br/>
+            
+          <div class="table-responsive">
+              <table class="table table-bordered table-striped text-center align-middle">
+                  <thead class="table-primary">
+                      <tr>
+       
+                      <?php
 
-          #Crear un objeto de la clase Pokemon
-          $pokemon = new Pokemon("Gengar");
+                      #Definir un array con dias de la semana
+                        $Semana = [
+                          "Lunes" ,"Martes","Miércoles","Jueves","Viernes","Sábado","Domingo"
+                        ];
+                        //a la variable día le asignamos le array
+                        $dias = $Semana;
+                        //este buble es el que se utiliza para los array, recorre toda la lista
+                        foreach ($dias as $dia){
+                          echo "<th scope='col'>$dia</th>";
+                        }
+                      ?>
+                      </tr>
+                    </thead>
+            </table>
+      
+        </div>
+      </article>
 
-          #Herir al Pokémon con una fuerza determinada
-          $pokemon->herir(4); #sepuede cambiar la fuerza(1 a 10)
-
-          #Obtener la vida actual del Pokémon
-          $vida_actual = $pokemon->getVida();
-
-          #Mostrar mensajes según el valor de vida
+      <!-- Ejercicio 4.4 -->
+      <article id="ejer4_4" class="card mb-4 shadow-sm bg-light rounded">
+        <div class="card-body">
+          <h3 class="card-title">Ejercicio 4.4</h3>
+          <h5 class="fw-bold mb-3">Descripción:</h5>
+          <ul class="list-group list-group-flush">
+              <li class="list-group-item">
+                🟣 Crea una tabla de 10 filas y 8 columnas.
+              </li>
+              <li class="list-group-item">
+                ⚔️ El contenido numérico de cada celda será la multiplicación entre el número de fila y el número de columna en las que está la celda.
+              </li>
+              <li class="list-group-item">
+                ❤️ El diseño de las celdas variará en función de si el valor de la celda es par o impar.
+              </li>
+          </ul>
           
-          #echo "Ahora la vida de Gengar es {$vida_actual}<br>";
+          <br/>
 
-          #Estructura condicional según la vida del Pokémon
-          if ($vida_actual > 6) {
-              echo "La cosa no va mal, vas aguantando";
-          } elseif ($vida_actual >= 3 && $vida_actual <= 6) {
-              echo "Estás un poco débil, defiéndete!!";
-          } else {
-              echo "Estás muy débil, es la hora del ataque final!!";
-          }
-          ?>
+          <table class="table table-bordered text-center shadow-sm">
+            <thead class="table-primary"><tr><th colspan="8">Tabla de Multiplicaciones</th></tr></thead>
+            <tbody>
+              <?php
+              $tabla = [];
 
+              for ($fila = 1; $fila <= 10; $fila++) {
+                for ($columna = 1; $columna <= 8; $columna++) {
+                  $tabla[$fila][$columna] = $fila * $columna; // Guardamos el valor
+                }
+              }
+              // Recorremos el array
+              foreach ($tabla as $fila) {
+                echo '<tr>';
+                
+                foreach ($fila as $valor) {
+                // Diferenciar pares e impares (los estilos)
+                  if ($valor % 2 == 0) {
+                      $estilo = 'background-color: #d1e7dd; font-weight: bold;'; // verde claro
+                  } else {
+                      $estilo = 'background-color: #f8d7da;'; // rojo claro
+                  }
+
+                  echo "<td style='$estilo'>$valor</td>";
+                  }
+                echo '</tr>';
+              }
+      
+
+              ?>
+            </tbody>
+          </table>
+        </div>
+      </article>
+
+      <article id="ejer4_5" class="card mb-4 shadow-sm bg-light rounded">
+        <div class="card-body">
+          <h3 class="card-title">Ejercicio 4.5</h3>
+          <h5 class="fw-bold mb-3">Descripción:</h5>
+          <ul class="list-group list-group-flush">
+              <li class="list-group-item">
+                🟣 Basándote en lo definido en el ejercicio 4.4, muestra por pantalla un tablero de ajedrez como el que aparece a continuación:
+              </li>
+          </ul>
+          
+          <br/>
+
+         <div class="d-inline-block border  border-dark">
+            <?php
+              // Bucle principal que genera las 8 filas del tablero
+              for ($fila = 1; $fila <= 8; $fila++) {
+
+                  // Abre un contenedor <div> que representa una fila del tablero
+                  // La clase "d-flex" de Bootstrap permite que las casillas se alineen horizontalmente (en fila)
+                  echo '<div class="d-flex">';
+
+                  // Segundo bucle que genera las 8 columnas dentro de cada fila
+                  for ($col = 1; $col <= 8; $col++) {
+
+                      // Calcula el color de la casilla según la posición
+                      // Si la suma de fila + columna es par → casilla negra
+                      // Si es impar → casilla blanca
+                      $color = (($fila + $col) % 2 == 0) ? "bg-dark" : "bg-light";
+
+                      // Genera una casilla del tablero (un cuadrado)
+                      // - "border border-dark": agrega un borde negro alrededor
+                      // - "$color": será "bg-dark" (negra) o "bg-light" (blanca)
+                      // - "ratio ratio-1x1": hace que el div sea cuadrado (1:1)
+                      // - "style='width: 50px;'": fija el ancho de cada casilla
+                      echo "<div class='border border-dark $color ratio ratio-1x1' style='width: 50px;'></div>";
+                  }
+
+                  // Cierra el contenedor de la fila actual antes de pasar a la siguiente
+                  echo '</div>';
+                }
+              ?>
+
+          </div>
+
+              
         </div>
       </article>
 
