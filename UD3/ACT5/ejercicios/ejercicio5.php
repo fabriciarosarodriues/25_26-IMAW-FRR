@@ -171,16 +171,19 @@
                                 para volver al primer archivo PHP.
                             </li>
 
-<br>
+                            <br>
                             <h2 class="mb-4">Iniciar sesión</h2>
-    <!--Iniciamos el action con la dirección del php de validación-->
-                            <form action="validacion.php" method="POST" class="p-3 bg-white rounded shadow-sm" style="max-width: 400px;">
-                            <!--Se utiliza el método post para que la información sea segura-->
+                            <!--Iniciamos el action con la dirección del php de validación-->
+                            <form action="validacion.php" method="POST" class="p-3 bg-white rounded shadow-sm"
+                                style="max-width: 400px;">
+                                <!--Se utiliza el método post para que la información sea segura-->
                                 <label class="form-label fw-bold">Usuario:</label><br>
-                                <input type="text" name="usuario" class="form-control" required><br><br>
+                                <input type="text" name="usuario" class="form-control"
+                                    placeholder="Introduce Nombre de Usuario" required><br><br>
 
                                 <label>Clave:</label><br>
-                                <input type="password" name="clave" class="form-control" required><br><br>
+                                <input type="password" name="clave" class="form-control"
+                                    placeholder="Introduce Contraseña" required><br><br>
 
                                 <button type="submit" class="btn btn-primary w-100">Ingresar</button>
                             </form>
@@ -197,22 +200,117 @@
                         <h5 class="fw-bold mb-3">Descripción:</h5>
                         <ul class="list-group list-group-flush">
                             <li class="list-group-item">
-                                💡Muestra los números del 1 al 15 mediante una <strong>lista desordenada de
-                                    HTML</strong></li>.
-                                    <li class="list-group-item">
-                                💡Muestra los números del 1 al 15 mediante una <strong>lista desordenada de
-                                    HTML</strong></li>.
+                                💡El objetivo de este ejercicio es crear una calculadora web basada en un formulario que
+                                permita al usuario introducir dos números y seleccionar una operación aritmética para
+                                realizar entre ellos (suma, resta, multiplicación o división).</li>.
+                            <li class="list-group-item">
+                                💡El formulario y la lógica de procesamiento deben estar en el mismo archivo PHP, de
+                                modo que al enviar el formulario la página se recargue mostrando el resultado en el
+                                propio formulario.</li>.
+                            <li class="list-group-item">
+                                El formulario debe contener lo siguiente:
+                                <ul class="list-group list-group-flush">
+                                    <li class="list-group-item">Dos campos numéricos para introducir los operandos.</li>
+                                    <li class="list-group-item">Un grupo de botones de opción (radio button) para elegir
+                                        la operación a realizar (+,-,*,/).</li>
+                                    <li class="list-group-item">Un botón para ejecutar la operación.</li>
+                                    <li class="list-group-item">Un campo de solo lectura que muestre el resultado.</li>
+                                </ul class="list-group-item">
+                            </li>
+                            <li class="list-group-item">
+                                <ul class="list-group list-group-flush">
+                                    <li class="list-group-item">Si un operando está vacío se considerará como 0.</li>
+                                    <li class="list-group-item">Si la operación es división y el segundo operando es 0,
+                                        debe mostrarse el mensaje “No se puede dividir entre 0”.</li>
+                                    <li class="list-group-item">En cualquier otro caso, mostrar el resultado numérico de
+                                        la operación.</li>
+                                </ul>
+                            </li>
+                            <li>
+                                La opción de operación seleccionada debe mantenerse marcada después de enviar el
+                                formulario (persistencia de selección).
+
+                            </li>
+                            <li>
+                                El valor de los operandos introducidos también debe conservarse tras el envío del
+                                formulario.
+                            </li>
                         </ul>
                         <br />
 
-                        <ul>
-                            <?php
-                            //cada vez que se reliza el bucle que crea una linea de lista nueva
-                            for ($i = 1; $i <= 15; $i++) {
-                                echo "<li>$i</li>";
+                        <?php
+
+
+                        // Recibir datos del formulario (este es el formato en el que viene los datos del formulario $_POST['usuario'])
+                        // ?? sirve para decir que si el usuario no es nulo que se use$_POST['usuario']
+                        //si no que se use ''
+                        //Si se pone algo entre comilla se usa ese valor por defecto
+                        
+                        $operador1 = $_GET['operador1'] ?? '0';
+                        $operador2 = $_GET['operador2'] ?? '0';
+                        $operando = $_GET['operando'] ?? '';
+                        $resultado = null;
+
+                        //esto sirve para que solo se realiace este partado si se realiza el get
+                        if ($_SERVER['REQUEST_METHOD'] === 'GET') {
+
+                            if ($operando == '+') {
+
+                                $resultado = $operador1 + $operador2;
+
+                            } else if ($operando == '-') {
+
+                                $resultado = $operador1 - $operador2;
+
+                            } else if ($operando == '*') {
+
+                                $resultado = $operador1 * $operador2;
+                            } else if ($operando == '/') {
+
+                                if ($operador2 == "0") {
+
+                                    $resultado = "No se puede dividir entre 0";
+                                } else {
+                                    $resultado = $operador1 / $operador2;
+                                }
                             }
-                            ?>
-                        </ul>
+                        }
+
+                        ?>
+
+
+                        <form action="ejercicio5.php" method="GET" class="p-3 bg-white rounded shadow-sm"
+                            style="max-width: 400px;">
+                            <!--Se utiliza el método post para que la información sea segura-->
+                            <label class="form-label fw-bold">Operando 1:</label><br>
+
+                            <!--Para que se recuerde lo que hayas puesto en el formulario se debe poner htmlspecialchars($operador2) en el value (dentro de un php)-->
+                            <input type="text" name="operador1" class="form-control" placeholder="Operador 1"
+                                value="<?= htmlspecialchars($operador1) ?>"><br><br>
+
+                            <label>Operando 2:</label><br>
+                            <input type="text" name="operador2" class="form-control" placeholder="Operador 2"
+                                value="<?= htmlspecialchars($operador2) ?>"><br><br>
+
+                            <input name="operando" type="radio" value="+" <?= $operando == '+' ? 'checked' : '' ?>>
+                            <input name="operando" type="radio" value="-" value="+" <?= $operando == '-' ? 'checked' : '' ?>>
+                            <input name="operando" type="radio" value="*" value="+" <?= $operando == '*' ? 'checked' : '' ?>>
+                            <input name="operando" type="radio" value="/" value="+" <?= $operando == '/' ? 'checked' : '' ?>><br><br>
+
+                            <button type="submit" class="btn btn-primary w-100">Operar</button>
+
+
+
+                        </form>
+
+                    <!--Si $resultado no es nulo, aparece esto en el formulario-->
+
+                        <p><?php if ($resultado !== null) {
+                            echo "<div><p>".$resultado."<p/></div>";
+                        } ?>
+
+
+
                     </div>
                 </article>
 
